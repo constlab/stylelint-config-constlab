@@ -1,0 +1,11 @@
+{
+  "name": "@constlab/stylelint-config-constlab",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constlab/stylelint-config-constlab.git"
+  },
+  "scripts": {
+    "version:patch": "npm version patch && git push origin main && git push --tag && npm publish --access public"
+  }
+}
