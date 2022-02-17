@@ -89,11 +89,11 @@ module.exports = {
 
     "function-comma-newline-after": "always-multi-line",
     "function-comma-newline-before": "never-multi-line",
-    "function-comma-space-after": "always",
+    "function-comma-space-after": "always-single-line",
     "function-comma-space-before": "never",
     "function-max-empty-lines": 0,
     "function-name-case": "lower",
-    "function-parentheses-space-inside": "never",
+    "function-parentheses-space-inside": "never-single-line",
     "function-url-quotes": "always",
     "function-whitespace-after": "always",
 
@@ -116,7 +116,7 @@ module.exports = {
     "declaration-bang-space-after": "never",
     "declaration-bang-space-before": "always",
     "declaration-colon-newline-after": "always-multi-line",
-    "declaration-colon-space-after": "always",
+    "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
 
     "declaration-block-semicolon-newline-after": "always",
@@ -153,7 +153,7 @@ module.exports = {
 
     "rule-empty-line-before": ["always", {
       "except": ["first-nested"],
-      "ignore": ["after-comment"]
+      "ignore": ["after-comment"],
     }],
 
     "media-feature-colon-space-after": "always",
@@ -171,16 +171,21 @@ module.exports = {
     "at-rule-empty-line-before": ["always", {
       "except": [
         "first-nested",
-        "blockless-after-blockless"
+        "blockless-after-blockless",
       ],
-      "ignore": ["after-comment"]
+      "ignore": ["after-comment"],
     }],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
 
-    "comment-empty-line-before": "always",
+    "comment-empty-line-before": ["always", {
+      "ignore": [
+        "after-comment",
+        "stylelint-commands",
+      ],
+    }],
     "comment-whitespace-inside": "always",
 
     "indentation": [2, { "baseIndentLevel": 1 }],
@@ -190,4 +195,10 @@ module.exports = {
     "no-empty-first-line": true,
     "no-irregular-whitespace": true,
   },
-}
+  "overrides": [
+    {
+      "files": ["**/*.less"],
+      "customSyntax": "postcss-less",
+    },
+  ],
+};
