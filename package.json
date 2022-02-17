@@ -7,5 +7,8 @@
   },
   "scripts": {
     "version:patch": "npm version patch && git push origin main && git push --tag && npm publish --access public"
+  },
+  "dependencies": {
+    "postcss-less": "6.0.0"
   }
 }
