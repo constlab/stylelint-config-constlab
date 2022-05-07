@@ -78,7 +78,7 @@ module.exports = {
 
     "at-rule-no-vendor-prefix": true,
 
-    "max-nesting-depth": 2,
+    "max-nesting-depth": 3,
 
     "no-unknown-animations": true,
 
@@ -95,7 +95,7 @@ module.exports = {
     "function-name-case": "lower",
     "function-parentheses-space-inside": "never-single-line",
     "function-url-quotes": "always",
-    "function-whitespace-after": "always",
+    // "function-whitespace-after": "always",
 
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
@@ -104,7 +104,9 @@ module.exports = {
 
     "unit-case": "lower",
 
-    "value-keyword-case": "lower",
+    "value-keyword-case": ["lower", {
+      "camelCaseSvgKeywords": true,
+    }],
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-newline-before": "never-multi-line",
     "value-list-comma-space-after": "always",
